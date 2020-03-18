@@ -1,0 +1,21 @@
+{% extends 'book/base.html' %}
+{%block context%}
+<div class="container">
+
+
+
+    <h3>Add a Note to diary</h3>
+
+    <form action="{% url 'add' %}" method="POST">
+        {% csrf_token %}
+        {{entryform.text}}
+        <!-- <textarea name="entry" class="textarea"> </textarea> -->
+
+
+
+        <br>
+        <input type="submit" value="Add" class="btn btn-primary">
+
+    </form>
+</div>
+{%endblock%}

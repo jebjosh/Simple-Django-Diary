@@ -1,0 +1,33 @@
+{% extends 'book/base.html' %}
+{%block context%}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1>Diary Home</h1>
+
+    </div>
+</div>
+
+<div class="container">
+
+    <a href="{% url 'add'%}" class="btn btn-sm btn-primary">Add</a>
+    <br>
+    <br>
+    {% for en in entries%}
+    <div class="card">
+        <div class="card-header">
+            <h4>{{en.date_added}}</h4>
+        </div>
+        <div class="card-body">
+            {{ en.text }}
+        </div>
+
+    </div>
+
+    <br>
+    {%endfor%}
+
+
+</div>
+
+{%endblock%}
